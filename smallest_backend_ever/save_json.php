@@ -1,7 +1,6 @@
 <?php
 header("Access-Control-Allow-Origin: *");
-header("Access-Control-Allow-Headers: *");
-
+header("Access-Control-Allow-Headers: Content-Type"); // Nur Content-Type erlauben
 
 $json = file_get_contents('php://input');
 if (strlen($json) > 100000) {
@@ -9,3 +8,4 @@ if (strlen($json) > 100000) {
 }
 $file = 'database.json';
 file_put_contents($file, $json);
+?>

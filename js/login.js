@@ -9,7 +9,7 @@ let users = [];
 */
 async function init() {
     await downloadFromServer();
-    users = await loadItem('users');
+    users = backend.getItem('users'); // Verwende die backend.getItem-Funktion statt loadItem
     buttonEventListener();
 }
 
