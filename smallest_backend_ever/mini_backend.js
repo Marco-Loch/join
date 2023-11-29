@@ -24,6 +24,7 @@ const backend = {
 async function downloadFromServer() {
   try {
     let response = await loadJSONFromServer();
+    console.log('Server response:', response);
     jsonFromServer = response; // response ist bereits ein JSON-Objekt
   } catch (error) {
     console.error("Error downloading data from server:", error);
@@ -94,8 +95,6 @@ function saveJSONToServer() {
 }
 
 function determineProxySettings() {
-  return "";
-
   if (window.location.href.indexOf(".developerakademie.com") > -1) {
     return "";
   } else {
